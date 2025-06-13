@@ -45,11 +45,9 @@ public class HubSpotWebhookService {
         whatsAppService.sendWithVacancyTemplate(
                 studentContact.phoneNumber(),
                 studentContact.fullName(),
-                matches.getFirst().vacancy().website(),
-                matches.get(0).vacancy().website(),
-                matches.get(1).vacancy().website(),
-                matches.get(2).vacancy().website(),
-                matches.get(3).vacancy().website()
+                matches.getFirst().vacancy(),
+                matches.get(1).vacancy(),
+                matches.get(2).vacancy()
         );
     }
 
@@ -57,6 +55,8 @@ public class HubSpotWebhookService {
         EmbeddingResult studentEmbeddingResult = embeddingService.embedText(
                 studentContact.study() + " " + studentContact.studyLocation() + " " + studentContact.text()
         );
+
+
         return new Student(
                 studentContact.fullName(),
                 studentContact.email(),

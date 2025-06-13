@@ -1,13 +1,13 @@
 package com.rebellworksllm.backend.whatsapp.application;
 
+import com.rebellworksllm.backend.matching.domain.Vacancy;
+
 public interface WhatsAppService {
 
     void sendWithVacancyTemplate(String phoneNumber,
                                    String name,
-                                   String vac1,
-                                   String vac2,
-                                   String vac3,
-                                   String vac4,
-                                   String vac5);
+                                   Vacancy vac1,
+                                   Vacancy vac2,
+                                   Vacancy vac3);
 
 }
